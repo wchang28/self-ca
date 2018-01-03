@@ -1,7 +1,7 @@
 {
-  "name": "ssl_test",
+  "name": "self-ca",
   "version": "1.0.0",
-  "description": "",
+  "description": "Self CA Example",
   "main": "app.js",
   "scripts": {
     "start": "node ./app.js",
