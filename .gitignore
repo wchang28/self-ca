@@ -1,0 +1,13 @@
+node_modules
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+passphrase.txt
+rootCA.key
+rootCA-pem.crt
+server-csr.pem
+server-pem.crt
+server-private-key.pem

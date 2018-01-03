@@ -1,0 +1,29 @@
+// generate the root authoriry certificate
+///////////////////////////////////////////////////////////////////////////////////////////
+openssl genrsa -des3 -out rootCA.key 2048
+openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 7300 -out rootCA-pem.crt
+C: US
+S: California
+L: Los Angeles
+O: ZZYZX, Inc.
+OU: ZZYZX
+CN: ZZYZX Root Certificate Authority
+E: (none)
+///////////////////////////////////////////////////////////////////////////////////////////
+
+install root authoriry certificate in the browser
+
+// generate server certificate by using the root authority's private key
+///////////////////////////////////////////////////////////////////////////////////////////
+openssl genrsa -out server-private-key.pem 2048
+openssl req -new -sha256 -key server-private-key.pem -out server-csr.pem -days 1024
+C: US
+S: California
+L: Los Angeles
+O: Shohuo28, Inc.
+OU: Shohuo28
+CN: localhost
+E: (none)
+
+openssl x509 -req -in server-csr.pem -CA rootCA-pem.crt -CAkey rootCA.key -CAcreateserial -out server-pem.crt -days 1024 -sha256 -extfile v3.ext
+///////////////////////////////////////////////////////////////////////////////////////////
