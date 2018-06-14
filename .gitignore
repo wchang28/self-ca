@@ -6,6 +6,7 @@ logs
 npm-debug.log*
 
 passphrase.txt
+rootCA-pem.srl
 server-csr.pem
 server-pem.crt
 server-private-key.pem

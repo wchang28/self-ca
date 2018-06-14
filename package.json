@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node ./app.js",
-    "test": "node ./test.js"
+    "test": "node ./test.js",
+    "test-curl": "curl --ssl-no-revoke https://localhost"
   },
   "author": "",
   "license": "MIT",
