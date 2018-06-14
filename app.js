@@ -49,7 +49,7 @@ let credentials = {
 	cert: certificate
 	,key: privateKey
 	,requestCert: false
-    ,rejectUnauthorized: false
+	,rejectUnauthorized: false
 };
 
 var config = {
@@ -65,5 +65,5 @@ var host = config.host;
 server.listen(port, host, function () {
 	var host = server.address().address;
 	var port = server.address().port;
-	 console.log('app server listening at %s://%s:%s', 'https', host, port);
+	console.log('app server listening at %s://%s:%s', 'https', host, port);
 });

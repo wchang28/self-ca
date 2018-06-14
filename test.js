@@ -17,11 +17,11 @@ request.get('https://localhost', {strictSSL: false}, function (error, response, 
 var server_ca_file = path.resolve(__dirname, "./rootCA-pem.crt");
 
 var options = {
-	agentOptions: {
-		ca: [
-			fs.readFileSync(server_ca_file)
-		]
-	}
+  agentOptions: {
+    ca: [
+      fs.readFileSync(server_ca_file)
+    ]
+  }
 }
 request.get('https://localhost', options, function (error, response, body) {
   console.log('error:', error); // Print the error if one occurred
