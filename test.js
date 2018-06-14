@@ -14,7 +14,7 @@ request.get('https://localhost', {strictSSL: false}, function (error, response, 
 });
 */
 
-var server_ca_file = path.resolve(__dirname, "./rootCA-pem.crt");
+var server_ca_file = path.resolve(__dirname, "./rootCA-pem.crt"); // self-made root authority certificate
 
 var options = {
   agentOptions: {
