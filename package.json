@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./app.js",
     "test": "node ./test.js",
-    "test-curl": "curl --ssl-no-revoke https://localhost"
+    "test-curl-openssl": "curl https://localhost",
+    "test-curl-winssl": "curl --ssl-no-revoke https://localhost"
   },
   "author": "",
   "license": "MIT",
