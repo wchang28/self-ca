@@ -5,6 +5,8 @@ const fs = require("fs");
 var server_ca_file = path.resolve(__dirname, "./rootCA-pem.crt"); // self-made root authority certificate
 var ca = fs.readFileSync(server_ca_file);
 
+console.log(`ca=\n${ca}`);
+
 request
 .get('https://localhost')
 .ca(ca)
