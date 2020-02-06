@@ -1,6 +1,6 @@
 // generate the root authoriry certificate
 ///////////////////////////////////////////////////////////////////////////////////////////
-openssl genrsa -des3 -out rootCA.key 2048
+openssl genrsa -des3 -out rootCA.key 2048	// the generated key will be encrypted with a pass-phrase
 openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 7300 -out rootCA-pem.crt
 C: US
 S: California
@@ -11,12 +11,12 @@ CN: ZZYZX Root Certificate Authority
 E: (none)
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-install root authoriry certificate in the browser
+install root authoriry certificate in the browser setup
 
 // generate server certificate by using the root authority's private key
 ///////////////////////////////////////////////////////////////////////////////////////////
-openssl genrsa -out server-private-key.pem 2048
-openssl req -new -sha256 -key server-private-key.pem -out server-csr.pem -days 1024
+openssl genrsa -out server-private-key.pem 2048	// the generated key will NOT be encrypted with a pass-phrase
+openssl req -new -sha256 -key server-private-key.pem -out server-csr.pem
 C: US
 S: California
 L: Los Angeles
@@ -25,5 +25,5 @@ OU: Shohuo28
 CN: localhost
 E: (none)
 
-openssl x509 -req -in server-csr.pem -CA rootCA-pem.crt -CAkey rootCA.key -CAcreateserial -out server-pem.crt -days 1024 -sha256 -extfile v3.ext
+openssl x509 -req -in server-csr.pem -CA rootCA-pem.crt -CAkey rootCA.key -CAcreateserial -out server-pem.crt -days 7300 -sha256
 ///////////////////////////////////////////////////////////////////////////////////////////
