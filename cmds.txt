@@ -25,5 +25,5 @@ OU: Shohuo28
 CN: localhost
 E: (none)
 
-openssl x509 -req -in server-csr.pem -CA rootCA-pem.crt -CAkey rootCA.key -CAcreateserial -out server-pem.crt -days 7300 -sha256
+openssl x509 -req -in server-csr.pem -CA rootCA-pem.crt -CAkey rootCA.key -CAcreateserial -out server-pem.crt -days 7300 -sha256 -extfile v3.ext
 ///////////////////////////////////////////////////////////////////////////////////////////
